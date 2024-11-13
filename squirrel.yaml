@@ -70,7 +70,7 @@ style:
   # candidate_format: '%c. %@'
 
   # 全局字体及大小
-  font_face: 'PingFang SC'
+  font_face: "PingFangSC-Regular,HanaMinA,HanaMinB"
   font_point: 16
   # 序号字体及大小（建议使用「等宽字体」）
   label_font_face: 'Lucida Grande'

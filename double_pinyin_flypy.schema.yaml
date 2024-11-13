@@ -181,7 +181,10 @@ translator:
   spelling_hints: 8              # corrector.lua ：为了让错音错字提示的 Lua 同时适配全拼双拼，将拼音显示在 comment 中
   always_show_comments: true     # corrector.lua ：Rime 默认在 preedit 等于 comment 时取消显示 comment，这里强制一直显示，供 corrector.lua 做判断用。
   comment_format: {comment}      # 将注释以词典字符串形式完全暴露，通过super_preedit.lua完全接管，灵活配置。
-  preedit_format:
+
+
+  # 去掉_disable后缀，将双拼的候选字符串（即「preedit」）显示为拼音（比如 ll hd 被显示为 liang hai）
+  preedit_format_disable:
     - xform/([bpmfdtnljqx])n/$1iao/
     - xform/(\w)g/$1eng/
     - xform/(\w)q/$1iu/
@@ -396,3 +399,12 @@ punctuator:
     "_" : "_"
     "|" : ["|", "\\"]
     "\\" : "、"
+
+ascii_composer:
+  # 定义切换到西文模式的快捷键
+  switch_key:
+    Caps_Lock: commit_code  # 按下 Caps Lock 会直接上屏
+    Control_L: noop  # 按下左 Control 键不做任何操作
+    Control_R: noop  # 按下右 Control 键不做任何操作
+    Shift_L: noop 
+    Shift_R: inline_ascii  # 按下右 Shift 键会临时切换到西文模式
