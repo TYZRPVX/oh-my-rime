@@ -17,3 +17,5 @@ build
 
 # 语言模型文件
 *.gram
+
+sync/
