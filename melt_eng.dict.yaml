@@ -8,4 +8,7 @@ import_tables:
   - dicts/rime_ice.en_ext   # 雾凇拼音-英文扩展
   - dicts/rime_ice.en       # 雾凇拼音-英文Base
  # - easy_en # Easy-en基础
+ # https://dvel.me/posts/make-rime-en-better/ 利用英语匹配逻辑 
+  - x_dict/top_english_word
+  - x_dict/x_qoo_phrase
 ...

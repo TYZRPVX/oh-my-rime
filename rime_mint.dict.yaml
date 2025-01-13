@@ -19,7 +19,6 @@ import_tables:
   
   
   # ------------- Rex Dict ----------
-  - x_dict/x_qoo_phrase
   - x_dict/x.baidu
   - x_dict/x.sogou
   - x_dict/luna_pinyin.sogou
