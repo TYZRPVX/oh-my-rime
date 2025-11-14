@@ -39,8 +39,11 @@ switches:
   - name: tone_display                  #开启后在输入编码的位置实时转换为带声调全拼，不开启则采用系统配置，影响的是preedit_format,归属：super_preedit.lua
     states: [ 声杳, 声起 ]
     reset: 0
+  - name: zh_simplify                   #简体输出开关，默认启用，确保只输出简体中文
+    states: [ 繁体, 简体 ]
+    reset: 1
   - name: transcription
-    states: [ 简体 , 繁体 ]
+    states: [  polite , 正统 ]
     reset: 0
   - name: ascii_punct
     states: [ "。，", "．，" ]
@@ -95,6 +98,9 @@ engine:
     - lua_filter@*reduce_english_filter       # 降低部分英语单词在候选项的位置
     - uniquifier                              # 去重
 
+simplifier:
+    option_name: zh_simplify
+    opencc_config: t2s.json
 
 # 简繁切换
 transcription_cc:
